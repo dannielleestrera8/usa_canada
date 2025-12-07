@@ -28,8 +28,8 @@
         .card img { width: 100%; height: 200px; object-fit: cover; }
         .card-content { padding: 15px; }
         .card h3 { margin-top: 0; color: var(--us-red); }
-
         .flag-strip { height: 10px; background: repeating-linear-gradient(45deg, var(--us-red), var(--us-red) 10px, #fff 10px, #fff 20px, var(--us-blue) 20px, var(--us-blue) 30px); }
+        .liberty {height: 100px}
     </style>
 </head>
 <body>
@@ -49,9 +49,8 @@
 
     <section id="about">
         <h2>About the USA</h2>
-        
-
-                <img src="/Users/m1/Desktop/USA & Canada/pngimg.com - statue_of_liberty_PNG6.png" alt="Liberty">
+        <img src= https://pngimg.com/uploads/statue_of_liberty/statue_of_liberty_PNG6.png class="liberty" alt="liberty" />
+    
 
         <p><strong>Government:</strong> Federal Presidential Constitutional Republic.</p>
         <p><strong>Population:</strong> Approx. 331 Million.</p>
@@ -64,7 +63,6 @@
             <div class="card">
                 
 
-[Image of American Burger]
 
                 <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=60" alt="Burger">
                 <div class="card-content">
@@ -73,7 +71,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1529193591184-b1d580690dd0?auto=format&fit=crop&w=500&q=60" alt="BBQ">
+                <img src="https://hips.hearstapps.com/clv.h-cdn.co/assets/17/20/1495035746-gallery-1494514761-recipes-cheerwine-ribs-0617.jpg?crop=1.0xw:1xh;center,top" alt="BBQ">
                 <div class="card-content">
                     <h3>Southern BBQ</h3>
                     <p>Slow-cooked meats, typically pork or beef, rich with smoky flavor and regional sauces.</p>
@@ -86,14 +84,14 @@
         <h2>Must-See Places</h2>
         <div class="grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1496442226666-8d4a0e62e6e9?auto=format&fit=crop&w=500&q=60" alt="NYC">
+                <img src="https://s.24.hu/app/uploads/2025/07/new-york-3-nap-brookly-hid-1.jpg" alt="NYC">
                 <div class="card-content">
                     <h3>New York City</h3>
                     <p>Times Square, Central Park, and the Empire State Building.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1533052788533-3e0c034509d3?auto=format&fit=crop&w=500&q=60" alt="Grand Canyon">
+                <img src="https://delivery.gfobcontent.com/api/public/content/22931b4569d8425c8961ef57cc8605aa?v=52ab64c3" alt="Grand Canyon">
                 <div class="card-content">
                     <h3>Grand Canyon</h3>
                     <p>Arizona's natural wonder, carving a mile deep into the earth.</p>
@@ -103,4 +101,15 @@
     </section>
 
 </body>
+<script>
+    const links = document.querySelectorAll("nav a");
+
+    links.forEach(link => {
+        link.addEventListener("click", function() {
+            links.forEach(a => a.classList.remove("active"));
+            this.classList.add("active");
+        });
+    });
+</script>
+
 </html>
