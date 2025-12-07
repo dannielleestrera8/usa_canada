@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>North America Explorer | Interactive Map</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        text-align: center;
+    }
+
+    /* NAVIGATION */
+    nav {
+        background: #222;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 14px;
+        border-radius: 6px;
+        transition: 0.3s ease;
+    }
+
+    nav a:hover {
+        background: #444;
+    }
+
+    /* ACTIVE MENU BUTTON */
+    nav a.active {
+        background: #cc0000; /* red */
+        color: white;
+    }
+
+    nav a.active:hover {
+        background: #ff4d4d; /* lighter red */
+    }
+
+    /* HERO SECTION */
+    .hero {
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+            url('https://images.unsplash.com/photo-1444723121867-b6a20fdd3fb6?auto=format&fit=crop&w=1350&q=80');
+        background-size: cover;
+        background-position: center;
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+    }
+    .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.3rem; max-width: 600px; }
+
+    /* MAP */
+    .map {
+        width: 100%;
+        margin: 30px 0;
+    }
+
+    /* COUNTRY SPLIT SECTION */
+    .split-container {
+        display: flex;
+        height: 350px;
+    }
+    .split {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        transition: 0.4s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .usa-side { background: #002868; }
+    .can-side { background: #DD0000; }
+
+    .split:hover { flex: 1.35; }
+
+    .hover-line {
+        position: absolute;
+        height: 4px;
+        width: 0;
+        background: white;
+        transition: 0.5s ease;
+    }
+    .top-line   { top: 0; left: 0; }
+    .bottom-line { bottom: 0; left: 0; }
+
+    .split:hover .top-line,
+    .split:hover .bottom-line {
+        width: 100%;
+    }
+
+    .flag {
+        width: 170px;
+        margin-top: 20px;
+        opacity: 0;
+        transform: translateX(-60px);
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+
+    .split:hover .flag {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    @keyframes swipeAcross {
+        0% { left: -180%; opacity: 1; transform: translateY(-50%) scale(1.1); }
+        60% { left: 80%; transform: translateY(-50%) scale(1.04); }
+        100% { left: 120%; opacity: 0; transform: translateY(-50%) scale(1); }
+    }
+
+    .flag-popup {
+        position: fixed;
+        top: 50%;
+        left: -200%;
+        transform: translateY(-50%);
+        width: 800px;
+        max-width: 90%;
+        animation: swipeAcross 1.3s ease-in-out forwards;
+        z-index: 999;
+        border-radius: 6px;
+        box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+    }
+
+    footer {
+        background: #222;
+        color: white;
+        padding: 20px;
+        margin-top: 40px;
+    }
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="usa.html">USA</a>
+    <a href="canada.html">Canada</a>
+    <a href="compare.html">Compare</a>
+    <a href="geoguessr.html">Geoguessr Game</a>
+    <a href="about.html">About Project</a>
+</nav>
+
+<div class="hero">
+    <h1>Explore North America</h1>
+    <p>Learn more about Canada and America with interactive buttons and animations!</p>
+</div>
+
+<img src="https://www.miraclemovers.com/wp-content/uploads/2023/12/pexels-la.jpg.webp" 
+     class="map" alt="Map" />
+
+<div class="split-container">
+
+    <div class="split usa-side">
+        <div class="hover-line top-line"></div>
+        <span>Explore USA</span>
+        <img src="https://flagcdn.com/us.svg" class="flag" alt="USA Flag"
+             onclick="popFlag('usa')">
+        <div class="hover-line bottom-line"></div>
+    </div>
+
+    <div class="split can-side">
+        <div class="hover-line top-line"></div>
+        <span>Explore Canada</span>
+        <img src="https://flagcdn.com/ca.svg" class="flag" alt="Canada Flag"
+             onclick="popFlag('canada')">
+        <div class="hover-line bottom-line"></div>
+    </div>
+
+</div>
+
+<footer></footer>
+
+<script>
+function popFlag(country) {
+    let popup = document.createElement("img");
+
+    popup.src = country === "usa" 
+        ? "https://flagcdn.com/us.svg" 
+        : "https://flagcdn.com/ca.svg";
+
+    popup.className = "flag-popup";
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+        window.location.href = country + ".html";
+    }, 1300);
+}
+</script>
+
+</body>
+</html>

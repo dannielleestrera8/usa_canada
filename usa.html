@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>United States of America</title>
+    <style>
+        /* USA THEME: Blue, Red, White */
+        :root { --us-blue: #002868; --us-red: #BF0A30; }
+        body { margin: 0; font-family: 'Arial', sans-serif; background-color: #fff; }
+        
+        /* Header */
+        header { background-color: var(--us-blue); color: white; padding: 40px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 3rem; }
+        header p { font-size: 1.2rem; margin-top: 10px; }
+
+        nav { background-color: #111; display: flex; justify-content: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: white; padding: 15px 20px; text-decoration: none; }
+        nav a.active { background-color: var(--us-red); }
+
+        /* Sections */
+        section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+        h2 { color: var(--us-blue); font-size: 2.5rem; border-bottom: 4px solid var(--us-red); display: inline-block; }
+        
+        /* Grid for cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 15px; }
+        .card h3 { margin-top: 0; color: var(--us-red); }
+
+        .flag-strip { height: 10px; background: repeating-linear-gradient(45deg, var(--us-red), var(--us-red) 10px, #fff 10px, #fff 20px, var(--us-blue) 20px, var(--us-blue) 30px); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">← Back Home</a>
+        <a href="#about" class="active">About USA</a>
+        <a href="#food">USA Food</a>
+        <a href="#places">Must-See Places</a>
+    </nav>
+
+    <header>
+        <h1>The United States of America</h1>
+        <p>Land of the Free, Home of the Brave</p>
+    </header>
+    <div class="flag-strip"></div>
+
+    <section id="about">
+        <h2>About the USA</h2>
+        
+
+                <img src="/Users/m1/Desktop/USA & Canada/pngimg.com - statue_of_liberty_PNG6.png" alt="Liberty">
+
+        <p><strong>Government:</strong> Federal Presidential Constitutional Republic.</p>
+        <p><strong>Population:</strong> Approx. 331 Million.</p>
+        <p>The USA is defined by its melting pot of cultures, innovation, and a strong emphasis on individualism and liberty. From the founding fathers to the tech boom in Silicon Valley, it is a nation of constant evolution.</p>
+    </section>
+
+    <section id="food" style="background-color: #f9f9f9;">
+        <h2>USA Food & Cuisine</h2>
+        <div class="grid">
+            <div class="card">
+                
+
+[Image of American Burger]
+
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=60" alt="Burger">
+                <div class="card-content">
+                    <h3>The Classic Burger</h3>
+                    <p>Originating in the late 19th century, the hamburger is the quintessential American staple.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1529193591184-b1d580690dd0?auto=format&fit=crop&w=500&q=60" alt="BBQ">
+                <div class="card-content">
+                    <h3>Southern BBQ</h3>
+                    <p>Slow-cooked meats, typically pork or beef, rich with smoky flavor and regional sauces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="places">
+        <h2>Must-See Places</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1496442226666-8d4a0e62e6e9?auto=format&fit=crop&w=500&q=60" alt="NYC">
+                <div class="card-content">
+                    <h3>New York City</h3>
+                    <p>Times Square, Central Park, and the Empire State Building.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1533052788533-3e0c034509d3?auto=format&fit=crop&w=500&q=60" alt="Grand Canyon">
+                <div class="card-content">
+                    <h3>Grand Canyon</h3>
+                    <p>Arizona's natural wonder, carving a mile deep into the earth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

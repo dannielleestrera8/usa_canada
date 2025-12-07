@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North America Geoguessr</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #222; color: white; margin: 0; }
+        nav { padding: 20px; background: #333; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        
+        .game-area { margin-top: 20px; }
+        
+        /* The "Map" - Represented by a grey box for demo purposes */
+        #map-container {
+            width: 600px;
+            height: 400px;
+            background-color: #4a6fa5; /* Ocean color */
+            margin: 0 auto;
+            position: relative;
+            cursor: crosshair;
+            border: 4px solid white;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1a/Blank_US_Map_%28states_only%29.svg'); 
+            background-size: cover;
+        }
+
+        #target-info { margin: 20px; font-size: 1.5rem; color: #FFD700; }
+        #result { margin-top: 15px; font-weight: bold; font-size: 1.2rem; }
+        
+        button { padding: 10px 20px; font-size: 1rem; cursor: pointer; background: #28a745; color: white; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Exit Game</a>
+    </nav>
+
+    <h1>City Geoguessr</h1>
+    <p>Click on the map where you think the city is located!</p>
+
+    <div id="target-info">Target: <span id="city-name">Loading...</span></div>
+    
+    <div id="map-container">
+        </div>
+
+    <div id="result"></div>
+    <br>
+    <button onclick="nextCity()">Next City</button>
+
+    <script>
+    // Game Logic
+    // Map Dimensions: 600x400 approx.
+    // Simplified coordinates for demo (0,0 is top left)
+    const cities = [
+        { name: "New York City, USA", x: 548, y: 106 },
+        { name: "Los Angeles, USA", x: 120, y: 220 },
+        { name: "Vancouver, Canada", x: 110, y: 130 },
+        { name: "Toronto, Canada", x: 420, y: 160 },
+        { name: "Miami, USA", x: 430, y: 320 }
+    ];
+
+    let currentCity = 0;
+    const mapEl = document.getElementById('map-container');
+    const resultEl = document.getElementById('result');
+    const nameEl = document.getElementById('city-name');
+
+    function loadCity() {
+        nameEl.innerText = cities[currentCity].name;
+        resultEl.innerText = "";
+    }
+
+    function nextCity() {
+        currentCity = (currentCity + 1) % cities.length;
+        loadCity();
+    }
+
+    mapEl.addEventListener('click', function(e) {
+        // Get click coordinates relative to the map box
+        const rect = mapEl.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const clickY = e.clientY - rect.top;
+
+        // 👇 NEW LOGGING LINE ADDED HERE! 👇
+        console.log(`Clicked Coordinates: X=${Math.round(clickX)}, Y=${Math.round(clickY)}`);
+        
+        const target = cities[currentCity];
+        
+        // Simple distance formula
+        const distance = Math.sqrt( Math.pow(clickX - target.x, 2) + Math.pow(clickY - target.y, 2) );
+
+        if(distance < 30) {
+            resultEl.innerText = "Excellent! You are very close! (" + Math.floor(distance) + "px off)";
+            resultEl.style.color = "#4caf50";
+        } else if (distance < 80) {
+            resultEl.innerText = "Not bad! But a bit far. (" + Math.floor(distance) + "px off)";
+            resultEl.style.color = "orange";
+        } else {
+            resultEl.innerText = "Way off! Try studying the map. (" + Math.floor(distance) + "px off)";
+            resultEl.style.color = "#ff4444";
+        }
+    });
+
+    // Init
+    loadCity();
+</script>
+
+</body>
+</html>
