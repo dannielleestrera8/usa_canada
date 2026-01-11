@@ -5,20 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canada</title>
     <style>
-        /* CANADA THEME: Red, White */
         :root { --can-red: #FF0000; }
         body { margin: 0; font-family: 'Arial', sans-serif; background-color: #fff; }
-        
         header { background-color: var(--can-red); color: white; padding: 40px 20px; text-align: center; }
         header h1 { margin: 0; font-size: 3rem; }
-        
         nav { background-color: #111; display: flex; justify-content: center; position: sticky; top: 0; z-index: 100; }
         nav a { color: white; padding: 15px 20px; text-decoration: none; }
         nav a.active { background-color: #fff; color: var(--can-red); font-weight: bold; }
-
         section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
         h2 { color: var(--can-red); font-size: 2.5rem; border-left: 5px solid var(--can-red); padding-left: 15px; }
-        
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
         .card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .card img { width: 100%; height: 200px; object-fit: cover; }
@@ -28,109 +23,77 @@
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">← Back Home</a>
-        <a href="#about" class="active">About Canada</a>
-        <a href="#food">Canada Food</a>
-        <a href="#places">Must-See Places</a>
-        <a href="#anthem">National Anthem</a>
-    </nav>
+<nav>
+    <a href="index.html">← Back Home</a>
+    <a href="#about" class="active">About Canada</a>
+    <a href="#food">Canada Food</a>
+    <a href="#places">Must-See Places</a>
+    <a href="#anthem">National Anthem</a>
+</nav>
 
-    <header>
-        <h1>Canada</h1>
-        <p>True North Strong and Free</p>
-    </header>
+<header>
+    <h1>Canada</h1>
+    <p>True North Strong and Free</p>
+</header>
 
-    <section id="about">
-        <h2>About Canada</h2>
-        
-        <p><strong>Government:</strong> Federal Parliamentary Constitutional Monarchy.</p>
-        <p><strong>Population:</strong> Approx. 38 Million.</p>
-        <p>Known for its polite citizens, bilingualism (English & French), and vast wilderness. Canada champions multiculturalism and has a rich history of Indigenous heritage.</p>
-    </section>
-
-    <section id="food" style="background-color: #fff0f0;">
-        <h2>Canada Food & Cuisine</h2>
-        <div class="grid">
-            <div class="card">
-                
-                <img src="https://twosleevers.com/wp-content/uploads/2025/02/Homemade-Poutine-1.jpg" alt="Poutine">
-                <div class="card-content">
-                    <h3>Poutine</h3>
-                    <p>French fries and cheese curds topped with a brown gravy. A Quebec classic.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://www.ehcanadatravel.com/images/easyblog_articles/3460/b2ap3_large_Make-your-own-Maple-Taffy-at-Home---Agape-Valley-Sugar-Bush-Pelham-Ontario.jpg" alt="Maple Syrup">
-                <div class="card-content">
-                    <h3>Maple Taffy</h3>
-                    <p>Hot maple syrup poured onto snow to harden into a sweet, sticky treat.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="places">
-        <h2>Must-See Places</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/MoraineLakeP02.jpg" alt="Banff">
-                <div class="card-content">
-                    <h3>Banff National Park</h3>
-                    <p>Rocky Mountain peaks, turquoise glacial lakes, and abundant wildlife.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t1.6435-9/49997573_2182064071854179_2705516233234579456_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHmdl3vgI1IsdUgkjwWs5CGq-XPM506Jj-r5c8znTomPzZ9oD3XeFdZMB-DBFRrZIc&_nc_ohc=YCDxj3BE22sQ7kNvwEanTby&_nc_oc=Adlner0UyWyqhxIAnNdpkcfHxd_ZxDYkiHjF98UXTp7U-n9cNRGNGZTxsr3xERM-LxM&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=rg2t1kJnGIPXelvTt8jqOg&oh=00_AfmvVLUA62cu0mw6Hx4xfLc770yzVFPOn9O62vvvIw2DOg&oe=695BCD3B" alt="Toronto">
-                <div class="card-content">
-                    <h3>Toronto / CN Tower</h3>
-                    <p>Canada's largest city, a bustling metropolis of culture and commerce.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="anthem" style="background-color: #f0fff4;">
-    <h2>Canadian National Anthem</h2>
-
-    <p><strong>"O Canada"</strong> is the national anthem of Canada. The lyrics were originally written by Sir Adolphe-Basile Routhier in 1880, with the English version finalized in 1908.</p>
-
-    <audio controls>
-        <source src="O Canada Canadian National Anthem with Lyrics.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-
-    <p>
-        <strong>Official English Lyrics:</strong><br>
-        O Canada! Our home and native land!<br>
-        True patriot love in all of us command.<br>
-        With glowing hearts we see thee rise,<br>
-        The True North strong and free!<br>
-        From far and wide,<br>
-        O Canada, we stand on guard for thee.<br><br>
-
-        God keep our land glorious and free!<br>
-        O Canada, we stand on guard for thee.<br>
-        O Canada, we stand on guard for thee.<br><br>
-
-        <strong>Additional Historical Verse:</strong><br>
-        O Canada! Where pines and maples grow.<br>
-        Great prairies spread and lordly rivers flow.<br>
-        How dear to us thy broad domain,<br>
-        From East to Western Sea;<br>
-        Thou land of hope for all who toil!<br>
-        Thou True North strong and free!<br><br>
-
-        God keep our land glorious and free!<br>
-        O Canada, we stand on guard for thee.<br>
-        O Canada, we stand on guard for thee.
-    </p>
+<section id="about">
+    <h2>About Canada</h2>
+    <p><strong>Government:</strong> Federal Parliamentary Constitutional Monarchy.</p>
+    <p><strong>Population:</strong> Approx. 38 Million.</p>
+    <p>Known for its polite citizens, bilingualism (English & French), and vast wilderness. Canada champions multiculturalism and has a rich history of Indigenous heritage.</p>
 </section>
 
-</body>
+<section id="food" style="background-color: #fff0f0;">
+    <h2>Canada Food & Cuisine</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://twosleevers.com/wp-content/uploads/2025/02/Homemade-Poutine-1.jpg" alt="Poutine">
+            <div class="card-content">
+                <h3>Poutine</h3>
+                <p>French fries and cheese curds topped with a brown gravy. A Quebec classic.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://www.ehcanadatravel.com/images/easyblog_articles/3460/b2ap3_large_Make-your-own-Maple-Taffy-at-Home---Agape-Valley-Sugar-Bush-Pelham-Ontario.jpg" alt="Maple Syrup">
+            <div class="card-content">
+                <h3>Maple Taffy</h3>
+                <p>Hot maple syrup poured onto snow to harden into a sweet, sticky treat.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="places">
+    <h2>Must-See Places</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/MoraineLakeP02.jpg" alt="Banff">
+            <div class="card-content">
+                <h3>Banff National Park</h3>
+                <p>Rocky Mountain peaks, turquoise glacial lakes, and abundant wildlife.</p>
+            </div>
+        </div>
+        <div class="card">
+            <!-- UPDATED IMAGE LINK -->
+            <img src="https://ucanada.com/cdn/shop/articles/cn_f6d34c96-b7f1-4d70-ac26-361ee078b6d2.jpg?v=1741387238" alt="Toronto">
+            <div class="card-content">
+                <h3>Toronto / CN Tower</h3>
+                <p>Canada's largest city, a bustling metropolis of culture and commerce.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="anthem" style="background-color: #f0fff4;">
+    <h2>Canadian National Anthem</h2>
+    <p><strong>"O Canada"</strong> is the national anthem of Canada.</p>
+    <audio controls>
+        <source src="O Canada Canadian National Anthem with Lyrics.mp3" type="audio/mp3">
+    </audio>
+</section>
+
 <script>
     const links = document.querySelectorAll("nav a");
-
     links.forEach(link => {
         link.addEventListener("click", function() {
             links.forEach(a => a.classList.remove("active"));
@@ -139,4 +102,5 @@
     });
 </script>
 
+</body>
 </html>
